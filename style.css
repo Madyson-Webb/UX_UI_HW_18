@@ -29,6 +29,19 @@
     max-height: 650px;
 }
 
+button {
+    background-color: #373738;
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
 h2 {
     display:flex;
     color: white;
@@ -40,6 +53,71 @@ h2 {
 body {
     margin:0;
     padding: 0;
+}
+
+.flexContainer {
+    display: flex;
+    flex-direction: row;
+    background-color: #009379;
+    padding: 35px;
+}
+.flexContainer div {
+    width: 33%;
+    text-align: center;
+}
+.mywork {
+    padding-top: 100px;
+}
+.workGrid {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "project1" "project2" "project3" "project4";
+}
+
+.workImg{
+    grid-area: workImg;
+}
+.workImg img {
+    width: 100%;
+}
+.wordText {
+    grid-area: workText;
+}
+
+#project1 {
+    grid-area: project1;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 
+    "workImg workText";
+}
+#project2 {
+    grid-area: project2;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 
+    "workImg workText";
+}
+#project3 {
+    grid-area: project3;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 
+    "workImg workText";
+}
+#project4 {
+    grid-area: project4;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 
+    "workImg workText";
 }
 
 .mainNav {
@@ -87,15 +165,39 @@ footer {
 .footer {
     color: white;
 }
-button {
-    background-color: #373738;
-    color: white;
-    border: none;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+@media only screen and (max-width: 600px) {
+    .flexContainer {
+        flex-direction: column;
+    }
+    .flexContainer div {
+        width: 100%;
+    }
+    .workGrid {
+        grid-template-rows: min-content min-content min-content min-content;
+    }
+    #project1 {
+        grid-template-rows: min-content min-content;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "workImg" "workText";
+    }
+    #project2 {
+        grid-template-rows: min-content min-content;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "workImg" "workText";
+    }
+    #project3 {
+        grid-template-rows: min-content min-content;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "workImg" "workText";
+    }
+    #project4 {
+        grid-template-rows: min-content min-content;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "workImg" "workText";
+    }
 }
+
